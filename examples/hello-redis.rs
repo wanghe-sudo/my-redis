@@ -6,7 +6,7 @@ async fn main() -> Result<()> {
     let mut client = client::connect("127.0.0.1:9379").await?;
 
     // 设置 key: "hello" 和 值: "world"
-    client.set("hello", "world".into()).await?;
+    //client.set("hello", "world".into()).await?;
 
     // 获取"key=hello"的值
     let result = client.get("hello").await?;

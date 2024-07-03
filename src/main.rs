@@ -18,6 +18,8 @@ async fn main() {
         let (socket, _) = listener.accept().await.unwrap();
         let db = db.clone();
         println!("Accepted");
+        // 每次有新的连接，则创建一个绿色线程
+        // 并将socket和db变量的所有权移动到闭包中 
         tokio::spawn(async move {
             process(socket, db).await
         });
